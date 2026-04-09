@@ -1,0 +1,5 @@
+{
+  "name": "Disaster Detect AI",
+  "description": "AI-powered image classification for natural disasters: Earthquakes, Wildfires, and Landslides.",
+  "requestFramePermissions": []
+}
