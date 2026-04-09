@@ -8,6 +8,7 @@ import {
   Flame, 
   Mountain, 
   Activity, 
+  Building2,
   RefreshCw,
   ChevronRight,
   ShieldAlert,
@@ -16,7 +17,7 @@ import {
   Settings2
 } from "lucide-react";
 
-type DisasterType = 'Earthquake' | 'Wildfire' | 'Landslide' | 'Unknown';
+type DisasterType = 'Earthquake' | 'Wildfire' | 'Landslide' | 'Urbanfire' | 'Unknown';
 
 interface AnalysisResult {
   type: DisasterType;
@@ -88,6 +89,7 @@ export default function Home() {
       case 'Earthquake': return <Activity className="w-12 h-12 text-blue-400" />;
       case 'Wildfire': return <Flame className="w-12 h-12 text-orange-500" />;
       case 'Landslide': return <Mountain className="w-12 h-12 text-amber-600" />;
+      case 'Urbanfire': return <Building2 className="w-12 h-12 text-red-500" />;
       default: return <AlertTriangle className="w-12 h-12 text-zinc-400" />;
     }
   };
@@ -112,7 +114,7 @@ export default function Home() {
         <div className="flex items-center justify-center gap-6 text-zinc-500 text-sm font-mono">
           <div className="flex items-center gap-2">
             <Database className="w-4 h-4 text-green-500" />
-            <span>MODELS: 3 PTH LOADED</span>
+            <span>MODELS: 4 PTH LOADED</span>
           </div>
           <div className="flex items-center gap-2">
             <Cpu className="w-4 h-4 text-blue-500" />
@@ -158,6 +160,16 @@ export default function Home() {
                 </div>
                 <div className="w-full h-1 bg-zinc-800 rounded-full overflow-hidden">
                   <div className="w-full h-full bg-amber-600/50" />
+                </div>
+              </div>
+
+              <div className="p-4 rounded-2xl bg-zinc-900 border border-white/5">
+                <div className="flex items-center gap-3 mb-2">
+                  <Building2 className="w-4 h-4 text-red-500" />
+                  <span className="text-xs font-medium text-zinc-300">urbanfire.pth</span>
+                </div>
+                <div className="w-full h-1 bg-zinc-800 rounded-full overflow-hidden">
+                  <div className="w-full h-full bg-red-500/50" />
                 </div>
               </div>
             </div>
@@ -230,7 +242,7 @@ export default function Home() {
                         <RefreshCw className="w-16 h-16 text-red-500 animate-spin mb-6" />
                       </div>
                       <p className="text-xl font-bold tracking-widest uppercase text-white">Executing Multi-Model Pipeline...</p>
-                      <p className="text-zinc-500 text-sm mt-2 font-mono">Running Earthquake, Wildfire, and Landslide models...</p>
+                      <p className="text-zinc-500 text-sm mt-2 font-mono">Running Earthquake, Wildfire, Landslide, and Urbanfire models...</p>
                     </div>
                   )}
                 </div>
@@ -311,7 +323,7 @@ export default function Home() {
 
       <footer className="mt-12 py-8 text-zinc-600 text-[10px] font-mono uppercase tracking-[0.4em] flex items-center gap-4">
         <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
-        Consensus Engine Active // Cross-referencing wildfire, earthquake, landslide
+        Consensus Engine Active // Cross-referencing wildfire, earthquake, landslide, urbanfire
       </footer>
     </div>
   );

@@ -23,6 +23,5 @@
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
-  "types": ["minimatch"],
   "exclude": ["node_modules"]
 }

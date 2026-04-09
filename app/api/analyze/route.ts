@@ -9,7 +9,8 @@ export async function POST(req: Request) {
     const models = [
       { id: 'Earthquake', file: 'earthquake.pth' },
       { id: 'Wildfire', file: 'wildfire.pth' },
-      { id: 'Landslide', file: 'landslide.pth' }
+      { id: 'Landslide', file: 'landslide.pth' },
+      { id: 'Urbanfire', file: 'urbanfire.pth' }
     ];
 
     const results = [];
